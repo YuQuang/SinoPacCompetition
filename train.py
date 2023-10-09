@@ -30,6 +30,7 @@ def train(model, train_loader, loss_function, optimizer) -> float:
         epoch_train_loss+=loss.item()
     return epoch_train_loss/iter_train_count
 
+
 def valid(model, valid_loader, loss_function) -> float:
     iter_valid_count, epoch_valid_loss = 0, 0
     for data, lable in valid_loader:
