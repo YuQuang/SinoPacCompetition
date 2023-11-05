@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     torch.manual_seed(TORCH_SEED)
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    model = torch.load(TEST_MODEL_PT_PATH).to(device).eval()
+    model = torch.load(TEST_MODEL_PT_PATH+TEST_MODEL_NAME).to(device).eval()
 
     test_dataset = SinoTestDataset(TEST_CSV_PATH)
     test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False, num_workers=4)
